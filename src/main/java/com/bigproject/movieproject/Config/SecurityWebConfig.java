@@ -28,7 +28,7 @@ public class SecurityWebConfig {
                 .formLogin(httpSecurityFormLoginConfigurer -> httpSecurityFormLoginConfigurer
                         .loginPage("/login")
                         .defaultSuccessUrl("/home_page")
-                        .failureUrl("/login?error"))
+                        .failureUrl("/login?error").permitAll())
                 .logout(httpSecurityLogoutConfigurer -> httpSecurityLogoutConfigurer
                         .logoutSuccessUrl("/login?logout"))
                 .rememberMe(httpSecurityRememberMeConfigurer -> httpSecurityRememberMeConfigurer

@@ -1,18 +1,41 @@
+
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-
 <head>
     <meta charset="UTF-8">
-    <title>Login page</title>
-    <link href="/css/login.css" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css" type="text/css">
+    <title>Welcome to my Page</title>
+    <!-- rel: chỉ định mối quan hệ giữa trang hiện tại vào trang liên kết -->
 </head>
 <body>
-<h1>Login</h1>
-<form>
-    <input type="text" placeholder=" Your Username">
-    <input type="text" placeholder=" Your Password">
-    <input type="checkbox"> remember me
-    <input type="submit">
-</form>
+<div class="table-container">
+    <div class="sign-in">
+
+        <form action="login" class="login" th:action="@{/login}" method="post">
+            <h2 class="center">SIGN IN</h2>
+            <input class="box center" type="text" placeholder="Your Username">
+            <input class="box center" type="password" placeholder="Your Password">
+            <div th:if="${param.error}" class="show-error">
+                <span>Password or Email is not correct</span>
+            </div>
+            <div class="remember-me"> <input id="remember-me"  type="checkbox"> remember me
+            </div>
+            <input class="submit center" value="Sign In" type="submit" >
+        </form>
+        <div class="register">
+            <div class="form-right">
+                <p class="para ">If you don't already have an account, click the button below to create your account</p>
+                <a href="register.html">
+                    <button class="item create-account" >Create Account</button>
+                </a>
+                <h3>OR</h3>
+                <button class="item email">SIGN IN WITH EMAIL</button>
+            </div>
+
+        </div>
+    </div>
+</div>
 </body>
 </html>

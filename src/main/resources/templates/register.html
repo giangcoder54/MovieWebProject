@@ -1,10 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>RegisterForm</title>
 </head>
 <body>
+<main>
+    <header>
+        <h1>Registration Form</h1>
+        <p>please fill out this form with the required information</p>
+    </header>
+    <!-- create form -->
+    <form action="register" class="RegisterForm" th:action="@{/user/register}" method="post">
+        <fieldset>
+            <!-- label : nếu click chuột vào nhãn, sẽ đưa con trỏ chuột vào vùng <input />. -->
+            <label >Enter Your UserName:<input type="text" name="username" required></label>
+            <label >Enter Your Email:<input type="email" name="email" required></label>
+            <label >Create a New Password:<input type="password" name="password" required></label>
+            <label for="birthday">Birthday: <input type="date" id="birthday" name="birthday"></label>
+
+        </fieldset>
+        <input type="submit" value="Submit">
+
+    </form>
+</main>
 
 </body>
-</html>
